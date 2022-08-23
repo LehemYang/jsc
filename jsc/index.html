@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="time" style="font-size: 50px">000</p>
+</body>
+<script>
+  function fibonacci (num) {
+    if (num <= 1) return 1;
+    return fibonacci(num - 1) + fibonacci(num - 2);
+  }
+  const time = (t) => {
+    const last = new Date().getTime();
+    fibonacci(t);
+    const now = new Date().getTime();
+    return now - last;
+  }
+  const t = time(40);
+
+  let p = document.getElementById('time');
+  p.innerHTML = t;
+</script>
+
+</html>
